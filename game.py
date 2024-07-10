@@ -5,6 +5,7 @@ import os, time, random
 ### LIB
 ## VARIABLES
 health = 100
+food = 0 # this variable = the number of days you can last with the amount of food you have
 location = "Genève"
 coins = 0
 languages = []
@@ -14,14 +15,49 @@ day = 0
 ## CLASSES
 
 ## FUNCS
+
+# useful terminal functions
+def clear():
+    os.system("clear")
+    #os.system("CLS")
+
+def wait(n):
+    time.sleep(n)
+
+def load(t, l=10, task=""):
+    clear()
+    i = 0
+    while i <=l:
+        print(f"[{i*"■"}{(l-i)*" "}]")
+        print(task)
+        i+=1
+        wait(t)
+        clear()
+
+def pressenter():
+  input("Press Enter to continue./")
+
+
 def is_int(s):
     return True if s in "123456789" else False
 
+# show_thing functions
 def show_inv():
-    print(inv)
+    print("Inventory")
+    print("=========")
+    for element in inv:
+        print(f"{element[0]} x{element[1]}")
 
 def show_loc(now = False):
     print(f"You are in {location}")
+
+def show_food():
+    if food == 0:
+        print("You have no food!")
+    elif food == 1:
+        print("You have enough food to last you 1 day")
+    else:
+        print(f"You have enough food to last you {food} days")
 
 def choose(passages, passages_name):
     i = 1
@@ -36,6 +72,9 @@ def choose(passages, passages_name):
         choose(passages, passages_name)
     elif c == "loc":
         show_loc()
+        choose(passages, passages_name)
+    elif c == "food":
+        show_food()
         choose(passages, passages_name)
     elif c == "quit":
         #q()
