@@ -423,7 +423,7 @@ def mapRoRo():
   clear()
   for i in range(0, len(chap1map)):
     print(chap1map[i])
-  input("Press enter to go downtown back : ")
+  input("Press enter to stop looking at the map : ")
   RoRoCity()
   
 def shopRoRo():
@@ -464,7 +464,7 @@ def askWhereKyleCity():
   RoRoCity()
 
 def dontCare():
-  print("You decide to don't care")
+  print("You decide to not care")
   wait(2)
   RoRoCity()
 
@@ -482,7 +482,7 @@ def goHomeOldMan():
 
 def helpOldMan():
   setPassage(4, "helpOldMan()")
-  print("Old Man : \"So hum, my DUCK has a problem... Can you come to my home to help me ?\"")
+  print("Old Man : \"So uhm, my DUCK has a problem... Can you come to my home to help me ?\"")
   cond("Yes", "Yes", "goHomeOldMan()", "goHomeOldMan()")
 
 def dontHelpOldMan():
