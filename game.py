@@ -5,10 +5,47 @@ import os, time, random
 ### LIB
 ## VARIABLES
 health = 100
+location = "Genève"
 coins = 0
 languages = []
 inv = []
 day = 0
+
+## CLASSES
+
+## FUNCS
+def is_int(s):
+    return True if s in "123456789" else False
+
+def show_inv():
+    print(inv)
+
+def show_loc(now = False):
+    print(f"You are in {location}")
+
+def choose(passages, passages_name):
+    i = 1
+    for passage in passages_name:
+        print(f"{i} : {passage}")
+        i += 1
+    c = input("> ")
+    if is_int(c):
+        passages[int(c)-1]()
+    elif c == "inv":
+        show_inv()
+        choose(passages, passages_name)
+    elif c == "loc":
+        show_loc()
+        choose(passages, passages_name)
+    elif c == "quit":
+        #q()
+        quit()
+    else:
+        choose(passages, passages_name)
+
+## PASSAGES DEFINITIONS
+
+
 # Maybe we should create character aptitudes and specialties like intelligence, strength
 
 # You can start the game as a venician merchant, a portuguese merchant, a persian merchant, a chinese merchant
