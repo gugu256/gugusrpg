@@ -1,3 +1,3 @@
 # TODO
 
-- [ ] make that list
+- [ ] set_passage functions
