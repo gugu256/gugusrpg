@@ -34,22 +34,27 @@ def load(t, l=10, task=""):
         wait(t)
         clear()
 
-def pressenter():
+def pe():
   input("Press Enter to continue./")
 
+def q():
+    choose("Are you sure you want to quit?", [quit, pe], ["Yes", "No"])
 
 def is_int(s):
     return True if s in "123456789" else False
 
-# show_thing functions
+# show_ functions
 def show_inv():
     print("Inventory")
     print("=========")
     for element in inv:
         print(f"{element[0]} x{element[1]}")
+    print("")
+    pe()
 
 def show_loc(now = False):
-    print(f"You are in {location}")
+    print(f"You are currently in {location}.")
+    pe()
 
 def show_food():
     if food == 0:
@@ -58,31 +63,31 @@ def show_food():
         print("You have enough food to last you 1 day")
     else:
         print(f"You have enough food to last you {food} days")
+    pe()
 
-def choose(passages, passages_name):
+def choose(msg, passages, passages_name):
+    clear()
+    print(msg)
     i = 1
     for passage in passages_name:
         print(f"{i} : {passage}")
         i += 1
     c = input("> ")
-    if is_int(c):
+    if is_int(c) and int(c) >= 1 and int(c) < i:
         passages[int(c)-1]()
     elif c == "inv":
         show_inv()
-        choose(passages, passages_name)
+        choose(msg, passages, passages_name)
     elif c == "loc":
         show_loc()
-        choose(passages, passages_name)
+        choose(msg, passages, passages_name)
     elif c == "food":
         show_food()
-        choose(passages, passages_name)
+        choose(msg, passages, passages_name)
     elif c == "quit":
-        #q()
-        quit()
+        q()
     else:
-        choose(passages, passages_name)
-
-## PASSAGES DEFINITIONS
+        choose(msg, passages, passages_name)
 
 
 # Maybe we should create character aptitudes and specialties like intelligence, strength
@@ -97,3 +102,8 @@ Your goal, is to become profitable and make your family's name remembered. But m
 ## MECHANICS
 # Meeting random people, getting food. Day-by-day game (that way we can have a main loop).
 # Some passages end days (for example getting somewhere or trekking), some don't (for example meeting people doesn't make the day end), some end your life and you have to start over!
+
+## PASSAGES DEFINITIONS
+
+while True:
+    q()
