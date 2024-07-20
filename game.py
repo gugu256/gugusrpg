@@ -120,6 +120,7 @@ def die(cause="none"):
     elif cause == "hunger":
         print("You starved to death!")
     pe()
+    quit()
 
 def checkhealth(cause="none"):
     if health > 0:
@@ -144,6 +145,9 @@ def eat(t=b):
         elif t == "d": print("You don't have any food! You cannot eat dinner")
         skipameal()    
 
+def eat_dinner():
+    eat(d)
+
 def skipameal():
     global health
     print("You skip a meal, but your health level decreases by 1...")
@@ -160,11 +164,17 @@ def day():
     # RANDOM EVENT HERE
     choose("Do you want to eat breakfast?", [eat, skipameal], ["Let's eat breakfast!","I can skip a meal..."], False)
 
+def night():
+    clear()
+    print("The sun sets...")
+    choose("Do you want to eat dinner?", [eat_dinner, skipameal], ["Let's eat dinner!", "I can skip a meal..."], False)
+    print("\nYou go to sleep...")
+
 # Maybe we should create character aptitudes and specialties like intelligence, strength
 
 # You can start the game as a venician merchant, a portugese merchant, a persian merchant, a chinese merchant
 
-### STORY/NOTES
+### LORE
 """Your father recently passed away, and you are his only child left. You have to keep the family business on, and trade spices, silk or ores on the Silk road
 You have to learn many skills (and languages) for this, and make decisions (such as where to start the game, get there by boat or by road)
 Your goal, is to become profitable and make your family's name remembered. But many obstacles are on the way to silk, and you will need to interact with people if you want it to work!"""
