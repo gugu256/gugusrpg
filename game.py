@@ -4,14 +4,14 @@ import os, time, random
 
 ### LIB
 ## VARIABLES
-health = 1
+health = 100
 food = 1 # this variable = the number of days you can last with the amount of food you have
-location = "Genève"
+location = "Venice"
 coins = 0
 languages = []
 inv = []
 day_n = 0
-b = "b"
+b = "b" # b and d are useful for the beakfast and dinner funcs
 d = "d"
 
 ## CLASSES
@@ -76,8 +76,8 @@ def show_food(now=False, pressenter=True):
     if pressenter: pe()
 
 def show_health(now=False, pressenter=True):
-    if now == True: print(f"Your health level is now {health}")
-    else: print(f"Your health level is currently {health}")
+    if now == True: print(f"Your health level is now {health}/100")
+    else: print(f"Your health level is currently {health}/100")
     if pressenter: pe()
 
 def show_day(pressenter=True):
@@ -184,3 +184,12 @@ Your goal, is to become profitable and make your family's name remembered. But m
 # Some passages end days (for example getting somewhere or trekking), some don't (for example meeting people doesn't make the day end), some end your life and you have to start over!
 
 ## PASSAGES DEFINITIONS
+def first_day():
+    day()
+
+def title():
+    print("SILK ROAD: THE GAME")
+    print("===================")
+    choose("", [first_day, q], ["Start Game", "Quit"], False)
+    
+title()
