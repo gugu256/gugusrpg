@@ -1,8 +1,8 @@
 # TODO
 
-- [ ] add callback to q() ex: q(passage): "No" --> passage()
 - [ ] decide whether to clear the terminal all the time or not
 - [ ] small random events during day() and night(): get attacked by an animal at night, wake up with your stuff stolen 
+- [x] make sure to come back to passage after quit() --> "No"
 - [x] night() - sunset, eat .5 food (dinner), die if health too low, fall asleep
 - [x] check_health() die if too low
 - [x] skipameal()

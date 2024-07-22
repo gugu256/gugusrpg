@@ -110,6 +110,7 @@ def choose(msg, passages, passages_name, clearscreen=True):
         choose(msg, passages, passages_name)
     elif c == "quit":
         q()
+        choose(msg, passages, passages_name)
     else:
         choose(msg, passages, passages_name)
 
