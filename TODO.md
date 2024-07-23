@@ -2,7 +2,7 @@
 
 ## Important elements of the game
 
-### options while still in Venice:
+### options while still in Venice
 - [ ] learn about the silk road
 - [ ] learn a language (latin and persian)
 - [ ] try to get a loan from another family to fund your trip
