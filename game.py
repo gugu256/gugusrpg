@@ -13,10 +13,14 @@ inv = []
 day_n = 0
 b = "b" # b and d are useful for the beakfast and dinner funcs
 d = "d"
+ate_least_meal = False
 
 ## CLASSES
 
 ## FUNCS
+
+def do_nothing():
+    pass
 
 # useful terminal functions
 def clear():
@@ -36,14 +40,17 @@ def load(t, l=10, task=""):
         wait(t)
         clear()
 
-def pe():
-  input("\nPress Enter to continue/")
+def pe(msg=""):
+    if msg=="":
+        input("\nPress Enter to continue/")
+    else:
+        input(f"\nPress Enter {msg}/")
 
 def q():
-    choose("Are you sure you want to quit?", [quit, pe], ["Yes", "No"])
-
+    quit()
+    
 def is_int(s):
-    return True if s in "123456789" else False
+    return True if s in "123456789" and s != "" else False
 
 # show_ functions
 def show_inv():
@@ -86,11 +93,44 @@ def show_day(pressenter=True):
 
 # other library functions
 
-def choose(msg, passages, passages_name, clearscreen=True):
+help_message =     """
+This game is a text-based game made of passages.
+You have to make a choice at every passage.
+At any moment, you can type one of these commands instead of inputting your choice:
+
+inv: see what's inside your inventory
+loc: see your current location
+food: see how much food you have left
+help: see this message again
+quit: quit the game
+
+That's it! Nothing more
+    """
+
+def h_title():
+    clear()
+    print("How to play")
+    print("===========\n")
+    print(help_message)
+    pe("if you got it")
+    title()
+
+def h():
+    clear()
+    print("How to play")
+    print("===========\n")
+    print(help_message)
+    pe("if you got it")
+
+def choose(msg, passages, passages_name, clearscreen=True, passage_title=""):
     if clearscreen: 
         clear()
 
-    print(msg + "\n")
+    if passage_title != "":
+        print(passage_title)
+        print("="*len(passage_title) + "\n")
+    
+    print(msg + "\n") if msg != "" else do_nothing()
     i = 1
     for passage in passages_name:
         print(f"{i} : {passage}")
@@ -100,20 +140,25 @@ def choose(msg, passages, passages_name, clearscreen=True):
         print()
         passages[int(c)-1]()
     elif c == "inv":
+        clear()
         show_inv()
-        choose(msg, passages, passages_name)
+        choose(msg, passages, passages_name, True, passage_title)
     elif c == "loc":
+        clear()
         show_loc()
-        choose(msg, passages, passages_name)
+        choose(msg, passages, passages_name, True, passage_title)
     elif c == "food":
+        clear()
         show_food()
-        choose(msg, passages, passages_name)
+        choose(msg, passages, passages_name, True, passage_title)
+    elif c == "help":
+        h()
+        choose(msg, passages, passages_name, True, passage_title)
     elif c == "quit":
         q()
-        choose(msg, passages, passages_name)
     else:
-        choose(msg, passages, passages_name)
-
+        choose(msg, passages, passages_name, clearscreen, passage_title)
+   
 # game functions (not passages)
 def die(cause="none"):
     if cause == "none":
@@ -131,8 +176,10 @@ def checkhealth(cause="none"):
 
 def eat(t=b):
     global food
+    global ate_last_meal
     if food >= 0.5:
         food -= 0.5
+        ate_last_meal = True
         if t == "b":
             print("You eat breakfast, your health stays the same")
             show_food(True, False)
@@ -151,8 +198,10 @@ def eat_dinner():
 
 def skipameal():
     global health
+    global ate_last_meal
     print("You skip a meal, but your health level decreases by 1...")
     health -= 1
+    ate_last_meal = False
     show_health(True, False)
     checkhealth("hunger")
 
@@ -189,8 +238,6 @@ def first_day():
     day()
 
 def title():
-    print("SILK ROAD: THE GAME")
-    print("===================")
-    choose("", [first_day, q], ["Start Game", "Quit"], False)
+    choose("", [first_day, h_title, q], ["Start Game", "How to play",  "Quit"], True,  "SILK ROAD: THE GAME")
     
 title()

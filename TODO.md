@@ -2,7 +2,7 @@
 
 ## Important elements of the game
 
-### options while still in Venice
+### Options while still in Venice
 - [ ] learn about the silk road
 - [ ] learn a language (latin and persian)
 - [ ] try to get a loan from another family to fund your trip
@@ -16,6 +16,8 @@
 
 # DONE
 
+- [x] help message
+- [x] ate_last_meal
 - [x] make sure to come back to passage after quit() --> "No"
 - [x] night() - sunset, eat .5 food (dinner), die if health too low, fall asleep
 - [x] check_health() die if too low
