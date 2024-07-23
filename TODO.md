@@ -2,13 +2,13 @@
 
 ## Important elements of the game
 
-- [ ] options while still in Venice:
-- [ ] 	learn about the silk road
-- [ ]	learn a language (latin and persian)
-- [ ]	try to get a loan from another family to fund your trip
-- [ ]	work (in the port?)
-- [ ]	buy stuff to prepare
-- [ ]	go to the market and try to buy & sell spices and silk
+### options while still in Venice:
+- [ ] learn about the silk road
+- [ ] learn a language (latin and persian)
+- [ ] try to get a loan from another family to fund your trip
+- [ ] work (in the port?)
+- [ ] buy stuff to prepare
+- [ ] go to the market and try to buy & sell spices and silk
 
 ## Little details
  
