@@ -19,6 +19,7 @@
 
 # DONE
 
+- [x] accessibilty enhancement (can make choice by typing option and not number)
 - [x] recording system!
 - [x] help message
 - [x] ate_last_meal

@@ -132,13 +132,21 @@ def choose(msg, passages, passages_name, clearscreen=True, passage_title=""):
     
     print(msg + "\n") if msg != "" else do_nothing()
     i = 1
+    
     for passage in passages_name:
         print(f"{i} : {passage}")
         i += 1
     c = input("> ")
+
+    lower_passages = []
+    for passage in passages_name:
+        lower_passages.append(passage.lower())
+    
     if is_int(c) and int(c) >= 1 and int(c) < i:
         print()
         passages[int(c)-1]()
+    elif c.lower() in lower_passages:
+        passages[lower_passages.index(c.lower())]()
     elif c == "inv":
         clear()
         show_inv()
