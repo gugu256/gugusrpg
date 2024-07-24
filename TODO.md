@@ -2,6 +2,9 @@
 
 ## Important elements of the game
 
+- [ ] scene right after breakfast with sister
+- [ ] father's burial
+
 ### Options while still in Venice
 - [ ] learn about the silk road
 - [ ] learn a language (latin and persian)
@@ -16,6 +19,7 @@
 
 # DONE
 
+- [x] recording system!
 - [x] help message
 - [x] ate_last_meal
 - [x] make sure to come back to passage after quit() --> "No"
