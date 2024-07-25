@@ -1,8 +1,10 @@
 # TODO
 
+## Work in progress
+- [ ] scene right after breakfast with sister
+
 ## Important elements of the game
 
-- [ ] scene right after breakfast with sister
 - [ ] father's burial
 
 ### Options while still in Venice
@@ -14,7 +16,8 @@
 - [ ] go to the market and try to buy & sell spices and silk
 
 ## Little details
- 
+
+- [ ] check if the names are historical 
 - [ ] small random events during day() and night(): get attacked by an animal at night, wake up with your stuff stolen 
 
 # DONE

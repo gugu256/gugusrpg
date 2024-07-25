@@ -8,12 +8,14 @@ health = 100
 food = 1 # this variable = the number of days you can last with the amount of food you have
 location = "Venice"
 coins = 0
-languages = []
+languages = ["venician"]
 inv = []
 day_n = 0
 b = "b" # b and d are useful for the beakfast and dinner funcs
 d = "d"
 ate_least_meal = False
+first_name = "Alonzo" # check if this is historical
+last_name = "Laranezzi"
 
 ## CLASSES
 
@@ -39,6 +41,9 @@ def load(t, l=10, task=""):
         i+=1
         wait(t)
         clear()
+
+def personsays(name, text):
+    print(f"{name}: \"{text}\"")
 
 def pe(msg=""):
     if msg=="":
@@ -233,7 +238,7 @@ def night():
 # You can start the game as a venician merchant, a portugese merchant, a persian merchant, a chinese merchant
 
 ### LORE
-"""Your father recently passed away, and you are his only child left. You have to keep the family business on, and trade spices, silk or ores on the Silk road
+"""Your father recently passed away. You have to keep the family business on, and trade spices, silk or ores on the Silk road
 You have to learn many skills (and languages) for this, and make decisions (such as where to start the game, get there by boat or by road)
 Your goal, is to become profitable and make your family's name remembered. But many obstacles are on the way to silk, and you will need to interact with people if you want it to work!"""
 
@@ -244,6 +249,10 @@ Your goal, is to become profitable and make your family's name remembered. But m
 ## PASSAGES DEFINITIONS
 def first_day():
     day()
+    clear()
+    print("Your younger sister suddenly enters the dining room and starts talking to you\n")
+    personsays("Sister",f"Hurry up {first_name}, we cannot be late to father's burial\n")
+    choose("", [do_nothing], ["\"You are right, wait for me in the carriage while I dress accordingly\""], False)
 
 def title():
     choose("", [first_day, h_title, q], ["Start Game", "How to play",  "Quit"], True,  "SILK ROAD: THE GAME")
