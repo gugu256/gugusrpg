@@ -1,7 +1,7 @@
 # TODO
 
 ## Work in progress
-- [ ] scene right after breakfast with sister
+- [ ] carriage scene
 
 ## Important elements of the game
 
@@ -22,6 +22,7 @@
 
 # DONE
 
+- [x] scene right after breakfast with sister
 - [x] accessibilty enhancement (can make choice by typing option and not number)
 - [x] recording system!
 - [x] help message

@@ -6,9 +6,9 @@ import os, time, random
 ## VARIABLES
 health = 100
 food = 1 # this variable = the number of days you can last with the amount of food you have
-location = "Venice"
-coins = 0
-languages = ["venician"]
+location = "Genoa"
+coins = 0 # Genoan currency = lira!
+languages = ["genoan"]
 inv = []
 day_n = 0
 b = "b" # b and d are useful for the beakfast and dinner funcs
@@ -42,8 +42,10 @@ def load(t, l=10, task=""):
         wait(t)
         clear()
 
-def personsays(name, text):
+def personsays(name, text, end_text=""):
     print(f"{name}: \"{text}\"")
+    if end_text != "":
+        print(end_text, end="")
 
 def pe(msg=""):
     if msg=="":
@@ -247,12 +249,25 @@ Your goal, is to become profitable and make your family's name remembered. But m
 # Some passages end days (for example getting somewhere or trekking), some don't (for example meeting people doesn't make the day end), some end your life and you have to start over!
 
 ## PASSAGES DEFINITIONS
+def carriage_to_burial():
+    clear()
+    
+
+def dressing_accordingly():
+    clear()
+    print("You enter your room and open your wardrobe to choose clothes")
+    pe("to put clothes on")
+    load(1, 3, "Putting clothes on...")
+    print("After quickly looking at yourself in the mirror, you are finally ready")
+    pe("to join your sister in the carriage")
+    carriage_to_burial()    
+
 def first_day():
     day()
     clear()
     print("Your younger sister suddenly enters the dining room and starts talking to you\n")
-    personsays("Sister",f"Hurry up {first_name}, we cannot be late to father's burial\n")
-    choose("", [do_nothing], ["\"You are right, wait for me in the carriage while I dress accordingly\""], False)
+    personsays("Sister",f"Hurry up {first_name}, we cannot be late to father's burial", "\n")
+    choose("", [dressing_accordingly], ["\"You are right, wait for me in the carriage while I dress accordingly\""], False)
 
 def title():
     choose("", [first_day, h_title, q], ["Start Game", "How to play",  "Quit"], True,  "SILK ROAD: THE GAME")
