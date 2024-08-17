@@ -7,7 +7,7 @@ import os, time, random
 health = 100
 food = 1 # this variable = the number of days you can last with the amount of food you have
 location = "Genoa"
-coins = 0 # Genoan currency = lira!
+coins = 0 # Genoan currency = lira
 languages = ["genoan"]
 inv = []
 day_n = 0
@@ -15,7 +15,7 @@ b = "b" # b and d are useful for the beakfast and dinner funcs
 d = "d"
 ate_least_meal = False
 first_name = "Alonzo" # check if this is historical
-last_name = "Laranezzi"
+last_name = "Laranezzi" # same here
 
 ## CLASSES
 
