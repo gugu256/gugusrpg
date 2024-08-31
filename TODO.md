@@ -1,6 +1,8 @@
 # TODO
 
 ## Work in progress
+
+- [ ] check if the names are historical 
 - [ ] carriage scene
 
 ## Important elements of the game
@@ -17,7 +19,6 @@
 
 ## Little details
 
-- [ ] check if the names are historical 
 - [ ] small random events during day() and night(): get attacked by an animal at night, wake up with your stuff stolen 
 
 # DONE

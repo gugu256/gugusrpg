@@ -14,6 +14,8 @@ day_n = 0
 b = "b" # b and d are useful for the beakfast and dinner funcs
 d = "d"
 ate_least_meal = False
+
+# START WORK HERE (but also work on the carriage)
 first_name = "Alonzo" # check if this is historical
 last_name = "Laranezzi" # same here
 
@@ -250,7 +252,7 @@ Your goal, is to become profitable and make your family's name remembered. But m
 
 ## PASSAGES DEFINITIONS
 def carriage_to_burial():
-    clear()
+    clear() # START WORK HERE
     
 
 def dressing_accordingly():
