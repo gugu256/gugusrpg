@@ -116,6 +116,16 @@ quit: quit the game
 That's it! Nothing more
     """
 
+credits_names =     """
+Credits
+
+evatzug - Main developer
+
+Élias H. - First beta tester
+Coblaith M. (www.coblaith.net) - Helped to find historical italian names
+
+    """
+
 def h_title():
     clear()
     print("How to play")
@@ -253,7 +263,7 @@ Your goal, is to become profitable and make your family's name remembered. But m
 ## PASSAGES DEFINITIONS
 def carriage_to_burial():
     clear() # START WORK HERE
-    
+
 
 def dressing_accordingly():
     clear()
@@ -272,6 +282,6 @@ def first_day():
     choose("", [dressing_accordingly], ["\"You are right, wait for me in the carriage while I dress accordingly\""], False)
 
 def title():
-    choose("", [first_day, h_title, q], ["Start Game", "How to play",  "Quit"], True,  "SILK ROAD: THE GAME")
+    choose("", [first_day, h_title, q], ["Start Game", "How to play", "Quit"], True,  "SILK ROAD: THE GAME")
     
 title()
