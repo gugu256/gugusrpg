@@ -2,14 +2,14 @@
 
 ## Work in progress
 
-- [ ] check if the names are historical 
 - [ ] carriage scene
 
 ## Important elements of the game
 
 - [ ] father's burial
 
-### Options while still in Venice
+### Options while still in Genoa
+
 - [ ] learn about the silk road
 - [ ] learn a language (latin and persian)
 - [ ] try to get a loan from another family to fund your trip
@@ -23,6 +23,7 @@
 
 # DONE
 
+- [x] check if the names are historical 
 - [x] scene right after breakfast with sister
 - [x] accessibilty enhancement (can make choice by typing option and not number)
 - [x] recording system!

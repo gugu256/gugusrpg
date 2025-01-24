@@ -8,7 +8,7 @@ health = 100
 food = 1 # this variable = the number of days you can last with the amount of food you have
 location = "Genoa"
 coins = 0 # Genoan currency = lira
-languages = ["genoan"]
+languages = ["Genoan", "Latin"]
 inv = []
 day_n = 0
 b = "b" # b and d are useful for the beakfast and dinner funcs
@@ -17,7 +17,7 @@ ate_least_meal = False
 
 # START WORK HERE (but also work on the carriage)
 first_name = "Alonzo" # check if this is historical
-last_name = "Laranezzi" # same here
+last_name = "Cabella" # this is historical historical
 
 ## CLASSES
 
@@ -59,7 +59,7 @@ def q():
     quit()
     
 def is_int(s):
-    return True if s in "123456789" and s != "" else False
+    return True if s in "0123456789" and s != "" else False
 
 # show_ functions
 def show_inv():
@@ -192,6 +192,10 @@ def die(cause="none"):
         print("You died!")
     elif cause == "hunger":
         print("You starved to death!")
+    elif cause == "drowning":
+        print("You drowned and died!")
+    elif cause == "thirst":
+        print("You died of thirst!")
     pe()
     quit()
 
@@ -231,6 +235,7 @@ def skipameal():
     ate_last_meal = False
     show_health(True, False)
     checkhealth("hunger")
+    pe()
 
 def day():
     clear()
@@ -247,9 +252,15 @@ def night():
     choose("Do you want to eat dinner?", [eat_dinner, skipameal], ["Let's eat dinner!", "I can skip a meal..."], False)
     print("\nYou go to sleep...")
 
+def speaks_language(lang):
+    if lang in languages:
+        return True
+    else:
+        return False
+
 # Maybe we should create character aptitudes and specialties like intelligence, strength
 
-# You can start the game as a venician merchant, a portugese merchant, a persian merchant, a chinese merchant
+# You can start the game as a genoan merchant, a portugese merchant, a persian merchant, a chinese merchant
 
 ### LORE
 """Your father recently passed away. You have to keep the family business on, and trade spices, silk or ores on the Silk road
@@ -263,7 +274,7 @@ Your goal, is to become profitable and make your family's name remembered. But m
 ## PASSAGES DEFINITIONS
 def carriage_to_burial():
     clear() # START WORK HERE
-
+    print(f"You look out the carriage. It slowly makes its way through the streets of Genoa.\nEvery person that sees it takes off their hat in respect.\nYour family, the {last_name}s, is admired by both peasants and rulers,\nand all of Genoa is bereaved by your father's death.")
 
 def dressing_accordingly():
     clear()
